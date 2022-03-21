@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+{% block content%}
+
+<div class = 'header-bar'>
+    <h2> Login </h2>
+</div>
+
+{% comment %} <a href = '{% url "tasks" %}'> Go Back</a> {% endcomment %}
+
+<div class = 'card-body'>
+
+    <form method = 'POST', action = ''>
+        {% csrf_token %}
+        {{form.as_p }}
+    <input class = 'button' value = 'Login', type = 'submit'>
+    </form>
+
+    <p> Don't have account Already? <a href = '{% url 'register' %}'> Register</a> </p>
+
+</div>
+
+{% endblock %}
